@@ -1,0 +1,13 @@
+{
+  "header": {
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Beyond\nweb\ndesign",
+    "subtitle1": "We build digital foundations for your business.",
+    "subtitle2": "Ready to bring your vision to life? Use our interactive calculator to see how we can fit your budget and timeline.",
+    "button": "Calculate your project"
+  }
+}

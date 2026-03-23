@@ -1,0 +1,13 @@
+{
+  "header": {
+    "services": "Services",
+    "portfolio": "Portefeuille",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Au-delà\ndu\nwebdesign",
+    "subtitle1": "Nous bâtissons les fondations numériques de votre entreprise.",
+    "subtitle2": "Prêt à concrétiser votre vision ? Utilisez notre calculateur interactif pour découvrir comment nous pouvons nous adapter à votre budget et à vos délais.",
+    "button": "Calculer votre projet"
+  }
+}

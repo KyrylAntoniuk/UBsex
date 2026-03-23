@@ -1,0 +1,123 @@
+@use "../../scss/variables" as *;
+@use "../../scss/mixins" as *;
+
+$breakpoint-tablet: 768px;
+
+.header {
+  background-color: $bg-light;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px clamp(20px, 5vw, 70px);
+  position: relative;
+  z-index: 100;
+
+  &__logo {
+    // Add styles for your logo if needed, e.g., height
+    .header__logo-img {
+      height: 40px; // Example height
+    }
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+    gap: 100px;
+  }
+
+  &__nav {
+    display: flex;
+    gap: 100px;
+  }
+
+  &__link {
+    color: $text-main;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  &__lang-link {
+    color: $text-main;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  // Hamburger and Close buttons are hidden by default on desktop
+  &__hamburger,
+  &__close-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 110;
+  }
+
+  @media (max-width: $breakpoint-tablet) {
+    &__menu {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      transform: translateX(100%);
+      transition: transform 0.3s ease-in-out;
+      // Ensure it's above other content but below the header's own buttons
+      z-index: 105;
+    }
+
+    &__nav {
+      flex-direction: column;
+      text-align: center;
+      gap: 30px;
+    }
+
+    &__link,
+    &__lang-link {
+      font-size: 32px; // Larger font for mobile overlay
+    }
+
+    // When the menu is open
+    &.header--menu-open {
+      .header__menu {
+        transform: translateX(0);
+      }
+      .header__hamburger {
+        display: none;
+      }
+    }
+
+    // Hamburger button styles
+    &__hamburger {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      // Position it if needed, but flexbox in header should handle it
+      .header__hamburger-line {
+        width: 25px;
+        height: 3px;
+        background-color: $text-main;
+        border-radius: 3px;
+      }
+    }
+
+    // Close button styles
+    &__close-btn {
+      display: block; // Show it in the mobile menu
+      position: absolute;
+      top: 30px;
+      right: clamp(20px, 5vw, 70px);
+      color: $text-main;
+      font-size: 40px;
+      line-height: 1;
+    }
+  }
+}

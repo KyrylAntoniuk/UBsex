@@ -1,0 +1,70 @@
+// src/styles/base/_reset.scss
+
+/* 1. Меняем блочную модель для всего проекта */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Убираем дефолтные отступы */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* 3. Делаем прокрутку плавной (полезно для якорных ссылок) */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 4. Настройки для body */
+body {
+  line-height: 1.5;
+  // Делаем шрифты более сглаженными и тонкими на MacOS
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 5. Убираем точки у списков (нам они редко нужны в меню или карточках) */
+ul,
+ol {
+  list-style: none;
+}
+
+/* 6. Делаем медиа-элементы адаптивными по умолчанию */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Заставляем формы и кнопки наследовать шрифт из body, 
+   а не использовать свой уродливый дефолтный */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 8. Сбрасываем стили для кнопок (чтобы не писать это каждый раз) */
+button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* 9. Предотвращаем выход длинного текста за пределы блока */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}

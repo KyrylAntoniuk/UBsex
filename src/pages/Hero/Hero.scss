@@ -1,0 +1,173 @@
+@use "../../scss/variables" as *;
+@use "../../scss/mixins" as *;
+
+.hero {
+  background-color: $bg-light;
+  padding: clamp(50px, 8vw, 100px) clamp(20px, 10vw, 170px);
+  overflow: hidden; // Prevents horizontal scroll from animations or shifted elements
+
+  &__title {
+    color: $accent-color;
+    font-size: clamp(48px, 10vw, 84px);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -2px;
+    margin-bottom: 40px;
+    text-transform: capitalize;
+    white-space: pre-line;
+  }
+
+  &__description {
+    max-width: 520px;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__text {
+    color: $text-main;
+    font-size: clamp(18px, 3vw, 24px);
+    line-height: 1.2;
+    font-weight: 500;
+  }
+
+  &__btn {
+    border: $text-main 3px solid;
+    color: $text-main;
+    background-color: transparent;
+    padding: 16px 32px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    transition:
+      background-color 0.3s,
+      color 0.3s;
+
+    &:hover {
+      background-color: $text-main;
+      color: $bg-light;
+    }
+  }
+}
+
+.description-section {
+  background-color: $bg-light;
+  text-align: center;
+  margin-top: 100px;
+
+  &__title-wrapper {
+    padding: 25px 0;
+  }
+
+  &__title {
+    font-size: clamp(2.5rem, 7vw, 4rem);
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 40px;
+  }
+
+  &__line-one,
+  &__line-two {
+    display: block;
+  }
+
+  &__line-two {
+    margin-left: 15%;
+  }
+
+  &__highlight {
+    color: $accent-color;
+  }
+
+  &__box-container {
+    margin-top: 75px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  &__box-item {
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    padding: 60px 45px;
+    flex: 1 1 300px; // Flex-grow, flex-shrink, flex-basis
+    max-width: 400px;
+    transition:
+      border-top 0.3s,
+      padding-top 0.3s;
+
+    h3 {
+      font-size: 24px;
+      padding-top: 60px;
+      padding-bottom: 46px;
+    }
+    p {
+      font-size: 20px;
+      padding-bottom: 60px;
+    }
+    button {
+      color: #ffffff;
+      background-color: $accent-color;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: none;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      font-size: 24px;
+    }
+
+    &:hover {
+      border-top: 10px solid $accent-color;
+      padding-top: 51px;
+    }
+  }
+}
+
+// Media Queries for Responsiveness
+@media (max-width: 1200px) {
+  .description-section {
+    &__line-two {
+      margin-left: 10%;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: clamp(40px, 10vw, 80px) clamp(15px, 5vw, 30px);
+
+    &__title {
+      text-align: center;
+    }
+
+    &__description {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+
+    &__btn {
+      display: block;
+      width: fit-content;
+      margin: 0 auto;
+    }
+  }
+
+  .description-section {
+    margin-top: 60px;
+
+    &__title {
+      align-items: center;
+    }
+
+    &__line-two {
+      margin-left: 0;
+    }
+  }
+}
