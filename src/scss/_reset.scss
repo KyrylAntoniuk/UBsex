@@ -1,5 +1,5 @@
 // src/styles/base/_reset.scss
-
+@use "./variables" as *;
 /* 1. Меняем блочную модель для всего проекта */
 *,
 *::before,
@@ -67,4 +67,5 @@ h4,
 h5,
 h6 {
   overflow-wrap: break-word;
+  color: $text-main;
 }
